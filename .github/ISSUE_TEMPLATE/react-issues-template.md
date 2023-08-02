@@ -1,8 +1,8 @@
 ---
-name: Feature request
+name: React Issues Template
 about: Suggest an idea for this project
 title: ''
-labels: feat
+labels: react
 assignees: coldrain-f
 
 ---
