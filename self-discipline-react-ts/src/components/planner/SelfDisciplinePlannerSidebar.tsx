@@ -9,6 +9,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import WorkspacesIcon from "@mui/icons-material/Workspaces";
 import StarBorder from "@mui/icons-material/StarBorder";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -26,9 +27,9 @@ export default function SelfDisciplinePlannerSidebar() {
         <ListItem disablePadding>
           <ListItemButton onClick={handleClick}>
             <ListItemIcon>
-              <AddIcon />
+              <WorkspacesIcon />
             </ListItemIcon>
-            <ListItemText primary="Group" />
+            <ListItemText primary="Workspace" />
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
         </ListItem>
