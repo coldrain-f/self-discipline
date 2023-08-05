@@ -16,9 +16,11 @@ import {
   SelectChangeEvent,
   MenuItem,
   FormControl,
+  Typography,
   Box,
 } from "@mui/material";
 
+import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
@@ -30,11 +32,27 @@ export default function SelfDisciplinePlannerTodoList() {
   };
 
   return (
-    <Box>
+    <Box component="div">
+      <Grid container spacing={2} sx={{ my: 1 }}>
+        <Grid xs={8}>
+          <Typography variant="h5" component="div">
+            Day 01
+          </Typography>
+        </Grid>
+        <Grid xs={4}>
+          <Typography
+            variant="subtitle1"
+            component="div"
+            sx={{ textAlign: "right" }}
+          >
+            2023-08-05(토)
+          </Typography>
+        </Grid>
+      </Grid>
+
       <Paper
         component="form"
         sx={{
-          my: 2,
           p: "2px 4px",
           display: "flex",
           alignItems: "center",
@@ -69,8 +87,8 @@ export default function SelfDisciplinePlannerTodoList() {
           <AddIcon />
         </IconButton>
       </Paper>
-      <TableContainer component={Paper}>
-        <Table sx={{}}>
+      <TableContainer component={Paper} sx={{ my: 2 }}>
+        <Table>
           <TableHead>
             <TableRow>
               <TableCell align="center">선택</TableCell>

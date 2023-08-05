@@ -14,14 +14,14 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
 export default function SelfDisciplinePlannerSidebar() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
   return (
-    <Box>
+    <Box component="div">
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={handleClick}>
