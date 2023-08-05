@@ -50,7 +50,7 @@ export default function SelfDisciplinePlannerReviewCheck() {
   };
 
   return (
-    <Box component="div">
+    <Box component="div" sx={{ mr: 3 }}>
       <Typography
         variant="h6"
         component="div"
@@ -59,7 +59,7 @@ export default function SelfDisciplinePlannerReviewCheck() {
       >
         복습 체크
       </Typography>
-      <TableContainer sx={{ my: 2 }}>
+      <TableContainer component={Paper} sx={{ my: 2 }}>
         <Table>
           <TableHead>
             <TableRow>

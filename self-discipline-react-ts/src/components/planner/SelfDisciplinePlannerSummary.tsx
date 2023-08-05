@@ -3,11 +3,21 @@ import MDEditor, { commands } from "@uiw/react-md-editor"; // https://uiwjs.gith
 import katex from "katex";
 import "katex/dist/katex.css";
 import { getCodeString } from "rehype-rewrite";
-import { Box, Button } from "@mui/material";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { Box, Typography, Button } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
+import AddIcon from "@mui/icons-material/Add";
 
-export default function SelfDisciplinePlannerMemo() {
-  const [value, setValue] = React.useState("");
+export default function SelfDisciplinePlannerSummary() {
+  const mdKaTeX = `This is to display the 
+\`\$\$\c = \\pm\\sqrt{a^2 + b^2}\$\$\`
+ in one line
+
+\`\`\`KaTeX
+c = \\pm\\sqrt{a^2 + b^2}
+\`\`\`
+`;
+
+  const [value, setValue] = React.useState(mdKaTeX);
   const handleChange = (e: string | undefined) => {
     setValue(e || "");
   };
@@ -31,10 +41,28 @@ export default function SelfDisciplinePlannerMemo() {
 
   return (
     <Box component="div" sx={{ mr: 3 }}>
-      <Box component="div" sx={{ mb: 2 }}>
+      <Grid container spacing={2}>
+        <Grid xs={10}>
+          <Typography
+            variant="h6"
+            component="p"
+            color="primary"
+            sx={{ fontWeight: "bold", my: 2 }}
+          >
+            학습 요약 정리
+          </Typography>
+        </Grid>
+        <Grid xs={2} sx={{ textAlign: "end" }}>
+          <Button sx={{ my: 2 }} variant="outlined" startIcon={<AddIcon />}>
+            등록
+          </Button>
+        </Grid>
+      </Grid>
+
+      <Box component="div">
         <MDEditor
           value={value}
-          height={150}
+          height={348}
           preview="preview" // live, edit, preview
           onChange={handleChange}
           commands={[...commands.getCommands(), help]}
@@ -79,14 +107,6 @@ export default function SelfDisciplinePlannerMemo() {
           }}
         />
       </Box>
-      <Button
-        variant="outlined"
-        sx={{ mb: 4 }}
-        fullWidth
-        startIcon={<AddCircleOutlineIcon />}
-      >
-        메모 등록
-      </Button>
     </Box>
   );
 }

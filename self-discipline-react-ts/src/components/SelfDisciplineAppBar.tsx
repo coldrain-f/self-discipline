@@ -144,6 +144,13 @@ export default function PrimarySearchAppBar() {
             >
               플래너
             </Button>
+            <Button
+              sx={{ my: 2, color: "white", display: "block" }}
+              component={RouterLink}
+              to="/guide"
+            >
+              가이드
+            </Button>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

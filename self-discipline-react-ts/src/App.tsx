@@ -6,13 +6,13 @@ import { Route, Routes } from "react-router-dom";
 
 export default function App() {
   return (
-    <Container maxWidth="xl">
+    <Box component="div">
       <SelfDisciplineAppBar />
       <Box>
         <Routes>
           <Route path="/planner" element={<SelfDisciplinePlanner />}></Route>
         </Routes>
       </Box>
-    </Container>
+    </Box>
   );
 }

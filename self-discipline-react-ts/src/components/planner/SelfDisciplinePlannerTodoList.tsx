@@ -92,64 +92,62 @@ export default function SelfDisciplinePlannerTodoList() {
           <AddIcon />
         </IconButton>
       </Paper>
-      <TableContainer sx={{ my: 2, height: "282px" }}>
+      <TableContainer component={Paper} sx={{ my: 2, height: "282px" }}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell align="center">선택</TableCell>
-              <TableCell align="left">제목</TableCell>
-              <TableCell align="left">상태</TableCell>
-              <TableCell align="left">우선 순위</TableCell>
+              <TableCell align="center" sx={{ width: "5%" }}>
+                선택
+              </TableCell>
+              <TableCell align="left" sx={{ width: "65%" }}>
+                제목
+              </TableCell>
+              <TableCell align="left" sx={{ width: "15%" }}>
+                상태
+              </TableCell>
+              <TableCell align="left" sx={{ width: "15%" }}>
+                우선 순위
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell align="left" sx={{ width: "10%" }}>
-                <Checkbox />
+              <TableCell align="left">
+                <Checkbox checked />
               </TableCell>
-              <TableCell align="left" sx={{ width: "60%" }}>
-                일본어 단어 10개 암기하기
-              </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
+              <TableCell align="left">수학 수식 정리하기</TableCell>
+              <TableCell align="left">
                 <Typography variant="body2" component="span" color="primary">
                   완료
                 </Typography>
               </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
-                보통
-              </TableCell>
+              <TableCell align="left">높음</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell align="left" sx={{ width: "10%" }}>
+              <TableCell>
                 <Checkbox />
               </TableCell>
-              <TableCell align="left" sx={{ width: "60%" }}>
-                코딩테스트 ALL IN ONE 강의 1개 듣기
+              <TableCell align="left">일본어 단어 10개 암기하기</TableCell>
+              <TableCell align="left">
+                <Typography variant="body2" component="span" color="primary">
+                  완료
+                </Typography>
               </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
+              <TableCell align="left">보통</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="left">
+                <Checkbox />
+              </TableCell>
+              <TableCell align="left">
+                코딩테스트 ALL IN ONE 강의 듣기
+              </TableCell>
+              <TableCell align="left">
                 <Typography variant="body2" component="span" color="error">
                   미완료
                 </Typography>
               </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
-                높음
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell align="left" sx={{ width: "10%" }}>
-                <Checkbox />
-              </TableCell>
-              <TableCell align="left" sx={{ width: "60%" }}>
-                코딩테스트 ALL IN ONE 강의 1개 듣기
-              </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
-                <Typography variant="body2" component="span" color="error">
-                  미완료
-                </Typography>
-              </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
-                높음
-              </TableCell>
+              <TableCell align="left">높음</TableCell>
             </TableRow>
           </TableBody>
         </Table>
