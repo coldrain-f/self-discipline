@@ -39,7 +39,7 @@ export default function SelfDisciplinePlannerTodoList() {
         <Table sx={{}}>
           <TableHead>
             <TableRow>
-              <TableCell align="left">선택</TableCell>
+              <TableCell align="center">선택</TableCell>
               <TableCell align="left">제목</TableCell>
               <TableCell align="left">상태</TableCell>
               <TableCell align="left">우선 순위</TableCell>

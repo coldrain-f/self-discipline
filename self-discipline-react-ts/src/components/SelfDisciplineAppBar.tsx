@@ -13,11 +13,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button } from "@mui/material";
-import {
-  Link as RouterLink,
-  LinkProps as RouterLinkProps,
-  MemoryRouter,
-} from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -61,7 +57,7 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+      <MenuItem onClick={handleMenuClose}>로그아웃</MenuItem>
     </Menu>
   );
 
@@ -136,22 +132,17 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" }, mr: 2 }}
           >
-            SELF DISCIPLINE
+            Evolvify
+            {/* Evolve와 Modify의 합성어로 실제로는 없는 단어이다. 
+                진화와 개선의 의미를 갖고, 더 나은 자신을 만들어내자는 의미로 사용했다.*/}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
               sx={{ my: 2, color: "white", display: "block" }}
               component={RouterLink}
-              to="/home"
-            >
-              HOME
-            </Button>
-            <Button
-              sx={{ my: 2, color: "white", display: "block" }}
-              component={RouterLink}
               to="/planner"
             >
-              PLANNER
+              플래너
             </Button>
           </Box>
           <Box sx={{ flexGrow: 1 }} />
