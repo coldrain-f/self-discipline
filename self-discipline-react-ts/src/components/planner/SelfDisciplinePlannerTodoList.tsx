@@ -3,6 +3,7 @@ import {
   Checkbox,
   IconButton,
   InputBase,
+  InputAdornment,
   Paper,
   Table,
   TableBody,
@@ -10,11 +11,24 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  InputLabel,
+  Select,
+  SelectChangeEvent,
+  MenuItem,
+  FormControl,
   Box,
 } from "@mui/material";
+
 import AddIcon from "@mui/icons-material/Add";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
 export default function SelfDisciplinePlannerTodoList() {
+  const [priority, setPriority] = React.useState("Medium");
+
+  const handlePriorityChange = (event: SelectChangeEvent) => {
+    setPriority(event.target.value as string);
+  };
+
   return (
     <Box>
       <Paper
@@ -29,8 +43,28 @@ export default function SelfDisciplinePlannerTodoList() {
       >
         <InputBase
           sx={{ ml: 1, flex: 1 }}
-          placeholder="할 일을 입력해주세요."
+          placeholder="이곳에 할 일을 입력해주세요..."
+          startAdornment={
+            <InputAdornment position="start">
+              <PlaylistAddIcon />
+            </InputAdornment>
+          }
         />
+        <InputLabel id="priority" sx={{ mr: 2 }}>
+          우선 순위
+        </InputLabel>
+        <FormControl variant="standard" sx={{ mr: 1 }}>
+          <Select
+            labelId="priority"
+            id="priority-select"
+            value={priority}
+            onChange={handlePriorityChange}
+          >
+            <MenuItem value="High">높음</MenuItem>
+            <MenuItem value="Medium">중간</MenuItem>
+            <MenuItem value="Low">낮음</MenuItem>
+          </Select>
+        </FormControl>
         <IconButton sx={{ p: "10px" }}>
           <AddIcon />
         </IconButton>
