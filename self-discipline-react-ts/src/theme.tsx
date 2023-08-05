@@ -1,8 +1,11 @@
-import { createTheme, alpha, getContrastRatio } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 // A custom theme for this app
 const theme = createTheme({
+  typography: {
+    fontFamily: "Noto Sans KR",
+  },
   palette: {
     primary: {
       main: "#556cd6",

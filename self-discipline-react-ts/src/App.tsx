@@ -1,9 +1,8 @@
-import * as React from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import SelfDisciplineAppBar from "./components/SelfDisciplineAppBar";
-import { Route, Routes } from "react-router-dom";
 import SelfDisciplinePlanner from "./components/planner/SelfDisciplinePlanner";
+import { Route, Routes } from "react-router-dom";
 
 export default function App() {
   return (
