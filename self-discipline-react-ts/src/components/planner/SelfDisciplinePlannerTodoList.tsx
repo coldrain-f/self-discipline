@@ -87,7 +87,7 @@ export default function SelfDisciplinePlannerTodoList() {
           <AddIcon />
         </IconButton>
       </Paper>
-      <TableContainer component={Paper} sx={{ my: 2, height: "550px" }}>
+      <TableContainer component={Paper} sx={{ my: 2, height: "400px" }}>
         <Table>
           <TableHead>
             <TableRow>
