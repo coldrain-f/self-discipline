@@ -69,6 +69,7 @@ export default function SelfDisciplinePlannerReviewCheck() {
               >
                 1일 전*
               </TableCell>
+
               <TableCell
                 align="left"
                 sx={{ width: "16.666%", fontWeight: "bold" }}

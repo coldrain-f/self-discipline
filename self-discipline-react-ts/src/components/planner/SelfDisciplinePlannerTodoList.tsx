@@ -35,8 +35,13 @@ export default function SelfDisciplinePlannerTodoList() {
     <Box component="div">
       <Grid container spacing={2} sx={{ my: 1 }}>
         <Grid xs={8}>
-          <Typography variant="h5" component="div" sx={{ fontWeight: "bold" }}>
-            Day 01
+          <Typography
+            variant="h5"
+            component="div"
+            sx={{ fontWeight: "bold" }}
+            color="primary"
+          >
+            Day 14
           </Typography>
         </Grid>
         <Grid xs={4}>
@@ -61,7 +66,7 @@ export default function SelfDisciplinePlannerTodoList() {
       >
         <InputBase
           sx={{ ml: 1, flex: 1 }}
-          placeholder="이곳에 할 일을 입력해주세요..."
+          placeholder="이곳에 오늘의 할 일을 입력해주세요..."
           startAdornment={
             <InputAdornment position="start">
               <PlaylistAddIcon />
@@ -87,7 +92,7 @@ export default function SelfDisciplinePlannerTodoList() {
           <AddIcon />
         </IconButton>
       </Paper>
-      <TableContainer component={Paper} sx={{ my: 2, height: "400px" }}>
+      <TableContainer component={Paper} sx={{ my: 2, height: "350px" }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -106,10 +111,28 @@ export default function SelfDisciplinePlannerTodoList() {
                 일본어 단어 10개 암기하기
               </TableCell>
               <TableCell align="left" sx={{ width: "15%" }}>
-                미완료
+                <Typography variant="body2" component="span" color="primary">
+                  완료
+                </Typography>
               </TableCell>
               <TableCell align="left" sx={{ width: "15%" }}>
                 보통
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="left" sx={{ width: "10%" }}>
+                <Checkbox />
+              </TableCell>
+              <TableCell align="left" sx={{ width: "60%" }}>
+                코딩테스트 ALL IN ONE 강의 1개 듣기
+              </TableCell>
+              <TableCell align="left" sx={{ width: "15%" }}>
+                <Typography variant="body2" component="span" color="error">
+                  미완료
+                </Typography>
+              </TableCell>
+              <TableCell align="left" sx={{ width: "15%" }}>
+                높음
               </TableCell>
             </TableRow>
           </TableBody>

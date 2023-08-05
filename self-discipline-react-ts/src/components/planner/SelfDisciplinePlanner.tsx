@@ -3,11 +3,12 @@ import Grid from "@mui/material/Unstable_Grid2";
 import SelfDisciplinePlannerTodoList from "./SelfDisciplinePlannerTodoList";
 import SelfDisciplinePlannerSidebar from "./SelfDisciplinePlannerSidebar";
 import SelfDisciplinePlannerReviewCheck from "./SelfDisciplinePlannerReviewCheck";
-import { Box, Divider } from "@mui/material";
+import SelfDisciplinePlannerMemo from "./SelfDisciplinePlannerMemo";
+import { Box, Divider, TextField } from "@mui/material";
 
 export default function SelfDisciplinePlanner() {
   return (
-    <Box component="div">
+    <Box sx={{ border: 1, borderColor: "divider" }}>
       <Grid container spacing={2}>
         <Grid xs={2}>
           <SelfDisciplinePlannerSidebar />
@@ -23,6 +24,13 @@ export default function SelfDisciplinePlanner() {
         <Grid xs={10}>
           <Divider />
           <SelfDisciplinePlannerReviewCheck />
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2}>
+        <Grid xs={2}></Grid>
+        <Grid xs={10}>
+          <SelfDisciplinePlannerMemo />
         </Grid>
       </Grid>
     </Box>
