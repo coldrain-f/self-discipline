@@ -52,14 +52,14 @@ export default function SelfDisciplinePlannerReviewCheck() {
   return (
     <Box component="div">
       <Typography
-        variant="h5"
+        variant="h6"
         component="div"
         sx={{ my: 2, fontWeight: "bold" }}
         color="primary"
       >
         복습 체크
       </Typography>
-      <TableContainer component={Paper} sx={{ my: 2 }}>
+      <TableContainer sx={{ my: 2 }}>
         <Table>
           <TableHead>
             <TableRow>

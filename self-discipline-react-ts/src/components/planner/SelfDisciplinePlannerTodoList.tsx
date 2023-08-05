@@ -36,7 +36,7 @@ export default function SelfDisciplinePlannerTodoList() {
       <Grid container spacing={2} sx={{ my: 1 }}>
         <Grid xs={8}>
           <Typography
-            variant="h5"
+            variant="h6"
             component="div"
             sx={{ fontWeight: "bold" }}
             color="primary"
@@ -92,7 +92,7 @@ export default function SelfDisciplinePlannerTodoList() {
           <AddIcon />
         </IconButton>
       </Paper>
-      <TableContainer component={Paper} sx={{ my: 2, height: "350px" }}>
+      <TableContainer sx={{ my: 2, height: "282px" }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -117,6 +117,22 @@ export default function SelfDisciplinePlannerTodoList() {
               </TableCell>
               <TableCell align="left" sx={{ width: "15%" }}>
                 보통
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell align="left" sx={{ width: "10%" }}>
+                <Checkbox />
+              </TableCell>
+              <TableCell align="left" sx={{ width: "60%" }}>
+                코딩테스트 ALL IN ONE 강의 1개 듣기
+              </TableCell>
+              <TableCell align="left" sx={{ width: "15%" }}>
+                <Typography variant="body2" component="span" color="error">
+                  미완료
+                </Typography>
+              </TableCell>
+              <TableCell align="left" sx={{ width: "15%" }}>
+                높음
               </TableCell>
             </TableRow>
             <TableRow>

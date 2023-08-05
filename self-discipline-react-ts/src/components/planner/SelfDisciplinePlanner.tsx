@@ -4,11 +4,11 @@ import SelfDisciplinePlannerTodoList from "./SelfDisciplinePlannerTodoList";
 import SelfDisciplinePlannerSidebar from "./SelfDisciplinePlannerSidebar";
 import SelfDisciplinePlannerReviewCheck from "./SelfDisciplinePlannerReviewCheck";
 import SelfDisciplinePlannerMemo from "./SelfDisciplinePlannerMemo";
-import { Box, Divider, TextField } from "@mui/material";
+import { Box, Container, Divider } from "@mui/material";
 
 export default function SelfDisciplinePlanner() {
   return (
-    <Box sx={{ border: 1, borderColor: "divider" }}>
+    <Box>
       <Grid container spacing={2}>
         <Grid xs={2}>
           <SelfDisciplinePlannerSidebar />
