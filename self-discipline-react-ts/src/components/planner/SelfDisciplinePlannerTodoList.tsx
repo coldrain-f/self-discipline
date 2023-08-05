@@ -35,7 +35,7 @@ export default function SelfDisciplinePlannerTodoList() {
     <Box component="div">
       <Grid container spacing={2} sx={{ my: 1 }}>
         <Grid xs={8}>
-          <Typography variant="h5" component="div">
+          <Typography variant="h5" component="div" sx={{ fontWeight: "bold" }}>
             Day 01
           </Typography>
         </Grid>
