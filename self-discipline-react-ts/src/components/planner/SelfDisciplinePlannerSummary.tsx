@@ -1,23 +1,11 @@
 import * as React from "react";
 import MDEditor, { commands } from "@uiw/react-md-editor"; // https://uiwjs.github.io/react-md-editor/
-import katex from "katex";
-import "katex/dist/katex.css";
-import { getCodeString } from "rehype-rewrite";
 import { Box, Typography, Button } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
 
 export default function SelfDisciplinePlannerSummary() {
-  const mdKaTeX = `This is to display the 
-\`\$\$\c = \\pm\\sqrt{a^2 + b^2}\$\$\`
- in one line
-
-\`\`\`KaTeX
-c = \\pm\\sqrt{a^2 + b^2}
-\`\`\`
-`;
-
-  const [value, setValue] = React.useState(mdKaTeX);
+  const [value, setValue] = React.useState("");
   const handleChange = (e: string | undefined) => {
     setValue(e || "");
   };
@@ -53,7 +41,13 @@ c = \\pm\\sqrt{a^2 + b^2}
           </Typography>
         </Grid>
         <Grid xs={2} sx={{ textAlign: "end" }}>
-          <Button sx={{ my: 2 }} variant="outlined" startIcon={<AddIcon />}>
+          <Button
+            sx={{ my: 2 }}
+            variant="contained"
+            startIcon={<AddIcon />}
+            color="primary"
+            size="small"
+          >
             등록
           </Button>
         </Grid>
@@ -66,45 +60,6 @@ c = \\pm\\sqrt{a^2 + b^2}
           preview="preview" // live, edit, preview
           onChange={handleChange}
           commands={[...commands.getCommands(), help]}
-          previewOptions={{
-            components: {
-              code: ({ inline, children = [], className, ...props }) => {
-                const txt = children[0] || "";
-                if (inline) {
-                  if (typeof txt === "string" && /^\$\$(.*)\$\$/.test(txt)) {
-                    const html = katex.renderToString(
-                      txt.replace(/^\$\$(.*)\$\$/, "$1"),
-                      {
-                        throwOnError: false,
-                      }
-                    );
-                    return <code dangerouslySetInnerHTML={{ __html: html }} />;
-                  }
-                  return <code>{txt}</code>;
-                }
-                const code =
-                  props.node && props.node.children
-                    ? getCodeString(props.node.children)
-                    : txt;
-                if (
-                  typeof code === "string" &&
-                  typeof className === "string" &&
-                  /^language-katex/.test(className.toLocaleLowerCase())
-                ) {
-                  const html = katex.renderToString(code, {
-                    throwOnError: false,
-                  });
-                  return (
-                    <code
-                      style={{ fontSize: "150%" }}
-                      dangerouslySetInnerHTML={{ __html: html }}
-                    />
-                  );
-                }
-                return <code className={String(className)}>{txt}</code>;
-              },
-            },
-          }}
         />
       </Box>
     </Box>

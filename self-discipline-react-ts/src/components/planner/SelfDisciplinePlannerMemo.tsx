@@ -79,14 +79,16 @@ export default function SelfDisciplinePlannerMemo() {
           }}
         />
       </Box>
-      <Button
-        variant="outlined"
-        sx={{ mb: 4 }}
-        fullWidth
-        startIcon={<AddCircleOutlineIcon />}
-      >
-        메모 등록
-      </Button>
+      <Box component="div" sx={{ textAlign: "end" }}>
+        <Button
+          variant="outlined"
+          startIcon={<AddCircleOutlineIcon />}
+          fullWidth
+          sx={{ mb: 4 }}
+        >
+          메모 등록
+        </Button>
+      </Box>
     </Box>
   );
 }
