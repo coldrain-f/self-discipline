@@ -138,7 +138,11 @@ export default function SelfDisciplinePlannerReviewCheck() {
                   <Link
                     component={RouterLink}
                     to="#"
-                    sx={{ mx: 2 }}
+                    sx={
+                      oneDayPrior == "None"
+                        ? { mx: 2, color: "grey", cursor: "default" }
+                        : { mx: 2 }
+                    }
                     variant="body2"
                     underline="none"
                   >
@@ -179,7 +183,11 @@ export default function SelfDisciplinePlannerReviewCheck() {
                   <Link
                     component={RouterLink}
                     to="#"
-                    sx={{ mx: 2 }}
+                    sx={
+                      threeDaysPrior == "None"
+                        ? { mx: 2, color: "grey", cursor: "default" }
+                        : { mx: 2 }
+                    }
                     variant="body2"
                     underline="none"
                   >
@@ -220,7 +228,11 @@ export default function SelfDisciplinePlannerReviewCheck() {
                   <Link
                     component={RouterLink}
                     to="#"
-                    sx={{ mx: 2 }}
+                    sx={
+                      sixDaysPrior == "None"
+                        ? { mx: 2, color: "grey", cursor: "default" }
+                        : { mx: 2 }
+                    }
                     variant="body2"
                     underline="none"
                   >
@@ -261,7 +273,11 @@ export default function SelfDisciplinePlannerReviewCheck() {
                   <Link
                     component={RouterLink}
                     to="#"
-                    sx={{ mx: 2 }}
+                    sx={
+                      thirteenDaysPrior == "None"
+                        ? { mx: 2, color: "grey", cursor: "default" }
+                        : { mx: 2 }
+                    }
                     variant="body2"
                     underline="none"
                   >
@@ -302,7 +318,11 @@ export default function SelfDisciplinePlannerReviewCheck() {
                   <Link
                     component={RouterLink}
                     to="#"
-                    sx={{ mx: 2 }}
+                    sx={
+                      twentyNineDaysPrior == "None"
+                        ? { mx: 2, color: "grey", cursor: "default" }
+                        : { mx: 2 }
+                    }
                     variant="body2"
                     underline="none"
                   >
@@ -343,7 +363,11 @@ export default function SelfDisciplinePlannerReviewCheck() {
                   <Link
                     component={RouterLink}
                     to="#"
-                    sx={{ mx: 2 }}
+                    sx={
+                      fiftyNineDaysPrior == "None"
+                        ? { mx: 2, color: "grey", cursor: "default" }
+                        : { mx: 2 }
+                    }
                     variant="body2"
                     underline="none"
                   >
