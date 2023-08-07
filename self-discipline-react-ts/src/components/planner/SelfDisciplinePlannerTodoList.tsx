@@ -22,10 +22,7 @@ import {
 
 import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-
-import EditIcon from "@mui/icons-material/Edit";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
@@ -99,32 +96,31 @@ export default function SelfDisciplinePlannerTodoList() {
         </IconButton>
       </Paper>
       <TableContainer component={Paper} sx={{ my: 2, height: "282px" }}>
-        <Table>
+        <Table stickyHeader sx={{ whiteSpace: "nowrap" }}>
           <TableHead>
             <TableRow>
-              <TableCell align="center" sx={{ width: "5%" }}>
+              <TableCell align="left" sx={{ width: "100px" }}>
                 선택
               </TableCell>
-              <TableCell align="left" sx={{ width: "60%" }}>
+              <TableCell align="left" sx={{ width: "300px" }}>
                 제목
               </TableCell>
-
-              <TableCell align="left" sx={{ width: "15%" }}>
+              <TableCell align="left" sx={{ width: "150px" }}>
                 우선 순위
               </TableCell>
-              <TableCell align="left" sx={{ width: "20%" }}>
+              <TableCell align="left" sx={{ width: "150px" }}>
                 액션
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell align="left">
-                <Checkbox checked />
+            <TableRow hover>
+              <TableCell align="left" padding="checkbox">
+                <Checkbox />
               </TableCell>
               <TableCell align="left">수학 수식 정리하기</TableCell>
               <TableCell align="left">높음</TableCell>
-              <TableCell align="left">
+              <TableCell align="left" padding="none">
                 <IconButton>
                   <DeleteOutlinedIcon />
                 </IconButton>
@@ -133,13 +129,13 @@ export default function SelfDisciplinePlannerTodoList() {
                 </IconButton>
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell>
+            <TableRow hover>
+              <TableCell align="left" padding="checkbox">
                 <Checkbox />
               </TableCell>
-              <TableCell align="left">일본어 단어 10개 암기하기</TableCell>
+              <TableCell align="left">일본어 단어 10개 암기하기 </TableCell>
               <TableCell align="left">보통</TableCell>
-              <TableCell align="left">
+              <TableCell align="left" padding="none">
                 <IconButton>
                   <DeleteOutlinedIcon />
                 </IconButton>
@@ -148,15 +144,15 @@ export default function SelfDisciplinePlannerTodoList() {
                 </IconButton>
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell align="left">
+            <TableRow hover>
+              <TableCell align="left" padding="checkbox">
                 <Checkbox />
               </TableCell>
               <TableCell align="left">
                 코딩테스트 ALL IN ONE 강의 1개 듣기
               </TableCell>
               <TableCell align="left">높음</TableCell>
-              <TableCell align="left">
+              <TableCell align="left" padding="none">
                 <IconButton>
                   <DeleteOutlinedIcon />
                 </IconButton>
