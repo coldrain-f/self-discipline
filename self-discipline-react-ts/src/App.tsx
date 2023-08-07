@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import SelfDisciplineAppBar from "./components/SelfDisciplineAppBar";
 import SelfDisciplinePlanner from "./components/planner/SelfDisciplinePlanner";
-import StickyFooter from "./components/planner/Footer";
+import SelfDisciplineFooter from "./components/planner/SelfDisciplineFooter";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
           <Route path="/planner" element={<SelfDisciplinePlanner />} />
         </Routes>
       </Box>
-      <StickyFooter />
+      <SelfDisciplineFooter />
     </Box>
   );
 }
