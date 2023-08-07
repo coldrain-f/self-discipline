@@ -25,12 +25,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
-
-import DoneIcon from "@mui/icons-material/Done";
-import CheckIcon from "@mui/icons-material/Check";
-import CheckBoxIcon from "@mui/icons-material/CheckBox";
-
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
 interface Todo {
