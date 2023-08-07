@@ -18,6 +18,7 @@ import {
   FormControl,
   Typography,
   Box,
+  Link,
 } from "@mui/material";
 
 import Grid from "@mui/material/Unstable_Grid2";
@@ -27,11 +28,49 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
+interface Todo {
+  id: number;
+  done: boolean;
+  title: string;
+  priority: string;
+}
+
 export default function SelfDisciplinePlannerTodoList() {
   const [priority, setPriority] = React.useState("Medium");
+  const [todoList, setTodoList] = React.useState<Todo[]>([
+    {
+      id: 1,
+      done: false,
+      title: "일본어 단어 10개 암기하기",
+      priority: "보통",
+    },
+    {
+      id: 2,
+      done: false,
+      title: "코딩테스트 ALL IN ONE 강의 1개 듣기",
+      priority: "보통",
+    },
+    {
+      id: 3,
+      done: true,
+      title: "자바스크립트 완전정복 스터디 10페이지 까지 학습",
+      priority: "높음",
+    },
+  ]);
 
   const handlePriorityChange = (event: SelectChangeEvent) => {
     setPriority(event.target.value as string);
+  };
+
+  const handleDoneChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    todoId: number
+  ) => {
+    const newTodoList: Todo[] = todoList.map((todo) =>
+      todo.id == todoId ? { ...todo, done: event.target.checked } : todo
+    );
+
+    setTodoList(newTodoList);
   };
 
   return (
@@ -100,7 +139,7 @@ export default function SelfDisciplinePlannerTodoList() {
           <TableHead>
             <TableRow>
               <TableCell align="left" sx={{ width: "100px" }}>
-                선택
+                완료
               </TableCell>
               <TableCell align="left" sx={{ width: "300px" }}>
                 제목
@@ -114,53 +153,37 @@ export default function SelfDisciplinePlannerTodoList() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow hover>
-              <TableCell align="left" padding="checkbox">
-                <Checkbox />
-              </TableCell>
-              <TableCell align="left">수학 수식 정리하기</TableCell>
-              <TableCell align="left">높음</TableCell>
-              <TableCell align="left" padding="none">
-                <IconButton>
-                  <DeleteOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <EditOutlinedIcon />
-                </IconButton>
-              </TableCell>
-            </TableRow>
-            <TableRow hover>
-              <TableCell align="left" padding="checkbox">
-                <Checkbox />
-              </TableCell>
-              <TableCell align="left">일본어 단어 10개 암기하기 </TableCell>
-              <TableCell align="left">보통</TableCell>
-              <TableCell align="left" padding="none">
-                <IconButton>
-                  <DeleteOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <EditOutlinedIcon />
-                </IconButton>
-              </TableCell>
-            </TableRow>
-            <TableRow hover>
-              <TableCell align="left" padding="checkbox">
-                <Checkbox />
-              </TableCell>
-              <TableCell align="left">
-                코딩테스트 ALL IN ONE 강의 1개 듣기
-              </TableCell>
-              <TableCell align="left">높음</TableCell>
-              <TableCell align="left" padding="none">
-                <IconButton>
-                  <DeleteOutlinedIcon />
-                </IconButton>
-                <IconButton>
-                  <EditOutlinedIcon />
-                </IconButton>
-              </TableCell>
-            </TableRow>
+            {todoList.map((todo) => (
+              <TableRow hover key={todo.id}>
+                <TableCell align="left" padding="checkbox">
+                  <Checkbox
+                    value={todo.done}
+                    checked={todo.done}
+                    onChange={(event) => handleDoneChange(event, todo.id)}
+                  />
+                </TableCell>
+                <TableCell align="left">
+                  <Link
+                    sx={
+                      todo.done
+                        ? { textDecoration: "line-through", cursor: "pointer" }
+                        : { textDecoration: "none", cursor: "pointer" }
+                    }
+                  >
+                    {todo.title}
+                  </Link>
+                </TableCell>
+                <TableCell align="left">{todo.priority}</TableCell>
+                <TableCell align="left" padding="none">
+                  <IconButton>
+                    <DeleteOutlinedIcon />
+                  </IconButton>
+                  <IconButton>
+                    <EditOutlinedIcon />
+                  </IconButton>
+                </TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
