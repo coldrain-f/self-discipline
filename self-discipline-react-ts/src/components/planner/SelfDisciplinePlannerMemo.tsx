@@ -84,7 +84,7 @@ export default function SelfDisciplinePlannerMemo() {
           variant="outlined"
           startIcon={<AddCircleOutlineIcon />}
           fullWidth
-          sx={{ mb: 4 }}
+          sx={{ mb: 3 }}
         >
           메모 등록
         </Button>

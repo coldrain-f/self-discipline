@@ -56,7 +56,7 @@ export default function SelfDisciplinePlannerSummary() {
       <Box component="div">
         <MDEditor
           value={value}
-          height={348}
+          height={282}
           preview="preview" // live, edit, preview
           onChange={handleChange}
           commands={[...commands.getCommands(), help]}

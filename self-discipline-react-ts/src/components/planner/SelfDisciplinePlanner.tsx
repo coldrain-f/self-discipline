@@ -9,7 +9,7 @@ import { Box, Divider } from "@mui/material";
 
 export default function SelfDisciplinePlanner() {
   return (
-    <Box>
+    <Box sx={{ overflow: "hidden" }}>
       <Grid container spacing={2}>
         <Grid xs={2}>
           <SelfDisciplinePlannerSidebar />
