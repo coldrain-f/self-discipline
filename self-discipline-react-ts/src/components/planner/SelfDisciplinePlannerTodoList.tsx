@@ -18,13 +18,18 @@ import {
   FormControl,
   Typography,
   Box,
-  Link,
+  Button,
 } from "@mui/material";
 
 import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
+
+import DoneIcon from "@mui/icons-material/Done";
+import CheckIcon from "@mui/icons-material/Check";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
@@ -58,6 +63,8 @@ export default function SelfDisciplinePlannerTodoList() {
     },
   ]);
 
+  const [selectedTodo, setSelectedTodo] = React.useState<Todo>();
+
   const handlePriorityChange = (event: SelectChangeEvent) => {
     setPriority(event.target.value as string);
   };
@@ -71,6 +78,14 @@ export default function SelfDisciplinePlannerTodoList() {
     );
 
     setTodoList(newTodoList);
+  };
+
+  const handleTodoClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    todoId: number
+  ) => {
+    const todo: Todo = todoList.filter((todo) => todo.id == todoId)[0];
+    setSelectedTodo(todo);
   };
 
   return (
@@ -99,12 +114,12 @@ export default function SelfDisciplinePlannerTodoList() {
 
       <Paper
         component="form"
+        variant="outlined"
         sx={{
           p: "2px 4px",
           display: "flex",
           alignItems: "center",
         }}
-        variant="outlined"
       >
         <InputBase
           sx={{ ml: 1, flex: 1 }}
@@ -135,7 +150,7 @@ export default function SelfDisciplinePlannerTodoList() {
         </IconButton>
       </Paper>
       <TableContainer component={Paper} sx={{ my: 2, height: "216px" }}>
-        <Table stickyHeader sx={{ whiteSpace: "nowrap" }}>
+        <Table stickyHeader sx={{ whiteSpace: "nowrap" }} size="small">
           <TableHead>
             <TableRow>
               <TableCell align="left" sx={{ width: "100px" }}>
@@ -163,15 +178,19 @@ export default function SelfDisciplinePlannerTodoList() {
                   />
                 </TableCell>
                 <TableCell align="left">
-                  <Link
-                    sx={
-                      todo.done
-                        ? { textDecoration: "line-through", cursor: "pointer" }
-                        : { textDecoration: "none", cursor: "pointer" }
-                    }
+                  <Button
+                    onClick={(event) => handleTodoClick(event, todo.id)}
+                    size="small"
+                    color={selectedTodo?.id == todo.id ? "primary" : "inherit"}
                   >
-                    {todo.title}
-                  </Link>
+                    <Typography
+                      variant="body2"
+                      component="span"
+                      sx={{ textDecoration: todo.done ? "line-through" : "" }}
+                    >
+                      {todo.title}
+                    </Typography>
+                  </Button>
                 </TableCell>
                 <TableCell align="left">{todo.priority}</TableCell>
                 <TableCell align="left" padding="none">
