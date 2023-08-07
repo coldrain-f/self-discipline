@@ -48,7 +48,7 @@ export default function SelfDisciplinePlannerSummary() {
             color="primary"
             size="small"
           >
-            등록
+            저장
           </Button>
         </Grid>
       </Grid>

@@ -22,6 +22,8 @@ import {
 
 import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
 export default function SelfDisciplinePlannerTodoList() {
@@ -99,14 +101,15 @@ export default function SelfDisciplinePlannerTodoList() {
               <TableCell align="center" sx={{ width: "5%" }}>
                 선택
               </TableCell>
-              <TableCell align="left" sx={{ width: "65%" }}>
+              <TableCell align="left" sx={{ width: "60%" }}>
                 제목
               </TableCell>
-              <TableCell align="left" sx={{ width: "15%" }}>
-                상태
-              </TableCell>
+
               <TableCell align="left" sx={{ width: "15%" }}>
                 우선 순위
+              </TableCell>
+              <TableCell align="left" sx={{ width: "20%" }}>
+                액션
               </TableCell>
             </TableRow>
           </TableHead>
@@ -116,38 +119,47 @@ export default function SelfDisciplinePlannerTodoList() {
                 <Checkbox checked />
               </TableCell>
               <TableCell align="left">수학 수식 정리하기</TableCell>
-              <TableCell align="left">
-                <Typography variant="body2" component="span" color="primary">
-                  완료
-                </Typography>
-              </TableCell>
               <TableCell align="left">높음</TableCell>
+              <TableCell align="left">
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+                <IconButton>
+                  <EditIcon />
+                </IconButton>
+              </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
                 <Checkbox />
               </TableCell>
               <TableCell align="left">일본어 단어 10개 암기하기</TableCell>
-              <TableCell align="left">
-                <Typography variant="body2" component="span" color="primary">
-                  완료
-                </Typography>
-              </TableCell>
               <TableCell align="left">보통</TableCell>
+              <TableCell align="left">
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+                <IconButton>
+                  <EditIcon />
+                </IconButton>
+              </TableCell>
             </TableRow>
             <TableRow>
               <TableCell align="left">
                 <Checkbox />
               </TableCell>
               <TableCell align="left">
-                코딩테스트 ALL IN ONE 강의 듣기
-              </TableCell>
-              <TableCell align="left">
-                <Typography variant="body2" component="span" color="error">
-                  미완료
-                </Typography>
+                코딩테스트 ALL IN ONE 강의 1개 듣기
               </TableCell>
               <TableCell align="left">높음</TableCell>
+              <TableCell align="left">
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+                <IconButton>
+                  <EditIcon />
+                </IconButton>
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>
