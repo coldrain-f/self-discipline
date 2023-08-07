@@ -23,7 +23,11 @@ import {
 import Grid from "@mui/material/Unstable_Grid2";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+
 import EditIcon from "@mui/icons-material/Edit";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
 export default function SelfDisciplinePlannerTodoList() {
@@ -122,10 +126,10 @@ export default function SelfDisciplinePlannerTodoList() {
               <TableCell align="left">높음</TableCell>
               <TableCell align="left">
                 <IconButton>
-                  <DeleteIcon />
+                  <DeleteOutlinedIcon />
                 </IconButton>
                 <IconButton>
-                  <EditIcon />
+                  <EditOutlinedIcon />
                 </IconButton>
               </TableCell>
             </TableRow>
@@ -137,10 +141,10 @@ export default function SelfDisciplinePlannerTodoList() {
               <TableCell align="left">보통</TableCell>
               <TableCell align="left">
                 <IconButton>
-                  <DeleteIcon />
+                  <DeleteOutlinedIcon />
                 </IconButton>
                 <IconButton>
-                  <EditIcon />
+                  <EditOutlinedIcon />
                 </IconButton>
               </TableCell>
             </TableRow>
@@ -154,10 +158,10 @@ export default function SelfDisciplinePlannerTodoList() {
               <TableCell align="left">높음</TableCell>
               <TableCell align="left">
                 <IconButton>
-                  <DeleteIcon />
+                  <DeleteOutlinedIcon />
                 </IconButton>
                 <IconButton>
-                  <EditIcon />
+                  <EditOutlinedIcon />
                 </IconButton>
               </TableCell>
             </TableRow>
